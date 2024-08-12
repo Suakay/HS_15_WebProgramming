@@ -1,0 +1,19 @@
+﻿<h1>Burası Sample view'dır.'</h1>
+<br /><br />
+@*qHtml.Partial("_SamplePartial")*@
+<partial name="_SamplePartial"/>
+<br /><br />
+<partial name="PartialViews/_OrnekPartial" />
+@{
+    string ad="Bilge Adam";
+}
+<partial name="_DataPartial" model="ad" />
+<br />
+<br />
+<partial name="~/Views/Home/_HomePartial.cshtml"/>
+<br />
+<br />
+@section footerSection{
+    <p>Tüm hakları saklıdır.Bu sayfada kullanılan içerikler yazarlarına aittir.</p>
+}
+

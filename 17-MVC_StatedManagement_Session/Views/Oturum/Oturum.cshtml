@@ -1,0 +1,18 @@
+﻿<h1>Oturum</h1>
+
+<div>
+    <h4>View'dan ilgili Session'daki bilgiye ulaşmak için:</h4>
+</div>
+
+<p>@Context.Session.GetString("ad")</p>
+
+<p>
+    @if (Context.Session.GetString("rol") == "yonetici")
+    {
+        <b>Bu kullanıcı yöneticidir.</b>
+    }
+    else
+    {
+        <b>Bu kullanıcı yönetici değildir.</b>
+    }
+</p>

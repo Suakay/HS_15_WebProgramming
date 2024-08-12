@@ -1,0 +1,61 @@
+﻿<h2>Personel Bilgilerini Giriniz</h2>
+<div>
+    Ad
+    <br />
+    <input type="text" id="txtName" />
+    <br />
+    Soyad
+    <br />
+    <input type="text" id="txtSurname" />
+    <br />
+    Sicil No
+    <br />
+    <input type="text"  id="txtNuber" />
+    <br />
+    Bölüm
+    <input type="text" id="txtSection" />
+    <br />
+    <br />
+    <input type="submit" id="btnGonder " value="Personel bilgilerini gönder" />
+</div>
+<script src="~/lib~/lib/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(){
+    function() {
+        $("#btGonder").click(
+            function(){
+                var personel = {
+                    name=$("#txtName").val(),
+                    surname: $("#txtSurname").val(),
+                    Number: $("#txtSection").val(),
+                };
+                $.ajax(
+                    {
+                        type:"Post",
+                        url:"Home/Personel",
+                        data:personel,
+
+                        success: function (data) {
+                            console.log(personel);
+                            alert("Başarıı bir şekilde gönderildi");
+
+                        },
+
+
+                    }
+                )
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </script>

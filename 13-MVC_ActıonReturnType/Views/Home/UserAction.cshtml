@@ -1,0 +1,60 @@
+﻿@using _13_MVC_ActıonReturnType.Models
+@model AppUser
+
+<h1>UserAction</h1>
+<dl>
+    <dt>ID</dt>
+    <dd>@Model.ID</dd>
+    <dt>Adi</dt>
+    <dd>@Model.FirstName</dd>
+    <dt>Soyadı</dt>
+    <dd>@Model.LastName</dd>
+    <dt>Adres</dt>
+    <dd>@Model.Address</dd>
+</dl>
+<div>
+    <div class="row">
+        <button class="btn-primary btn-success" type="button" id="btnUser">User Modeli Getir</button>
+
+    </div>
+    <table id="tblUser">
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    //document.getElementById("btnUser");//js
+    //  $("#btnUser");//jquery
+    $(document).ready(
+        function () {
+            $("#btnUser").click(
+                function () {
+                    $("#tblUser tbody tr").remove();//tabloda satır varsa silisin.
+                    $.ajax(
+                        {
+                            type: 'Get',
+                            url: "https://localhost:7220/home/UserModel",
+                            dataType: 'json',
+                            success: function (data) {
+                                var items = '';
+                                $.each(data, function (indx, value) {
+                                    console.log(index);
+                                    console.log(value);
+                                    var row = '';
+                                    row = "<tr><td>" + value + "<td>";
+                                    $("#tblUser tbody").append(row);
+
+                                })
+                                  },
+                            error: function (error) {
+                                alert(error.responseText);
+                            }
+                        })
+                })
+
+                
+            })
+        
+    
+</script>

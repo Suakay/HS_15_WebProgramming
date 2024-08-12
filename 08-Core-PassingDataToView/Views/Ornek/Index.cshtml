@@ -1,0 +1,13 @@
+﻿<h1>Index</h1>
+<div class="justify-content-center">
+    <h1 class="btn btn-danger">@ViewBag.Tarih</h1>
+    <br />
+  <p><b>@ViewData["Saat"]<b></p>
+      <p><b>@TempData["Gun"] günü<b></p>
+</div>
+<div class="justify-content-center">
+    @foreach(var item in ViewBag.Koleksiyon)
+    {
+        <p>@item</p>
+    }
+</div>

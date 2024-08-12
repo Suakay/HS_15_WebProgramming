@@ -1,0 +1,58 @@
+﻿@{
+    //Taımlama işlemlerini yapabiliriz.
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Razor View Engine</h1>
+<h2>Razor View Engine Kullanımı:</h2>
+@{
+    string ad = "Bilge";
+    string soyad = "Adam";
+    int yas = 20;
+}
+<br /><br /><br />
+<p><b>@ad</b>@soyad-@yas</p>
+
+<br /><br /><br
+    <h2>Razor View Engine İle Karar Yapıları</h2>
+@{
+    int sayi = 15;
+}
+@{
+    if (sayi < yas)
+    {
+        <span>Sayı değeri (<b>Yaş>@sayi</b >,Yaş değerinden (<b>@yas</b>) küçüktür!</span>
+    }
+    else if(sayi>yas)
+    {
+        <span>Sayı değeri (<b>Yaş>@sayi</b>,Yaş değerinden (<b>@yas</b>) büyüktür!</span>
+    }
+    else
+    {
+        <span>Sayı değeri (<b>Yaş>@sayi</b>,Yaş değerinden (<b>@yas</b>) eşittir!</span>
+        
+    }
+}
+<br /><br /><br />
+<h2>Razor View Engine ile Döngüler ve Koleksiyonlar</h2>
+@{
+    string[] isimler = { "Bilge", "Ayşe", "Hayriye", "Ertan" };
+    string[] soyadlar = { "Adama", "Yılmaz", "Huriye", "Türkyılmaz" };
+}
+<h6>For Döngüsü ile</h6>
+@for(var i = 0; i < isimler.Length; i++)
+{
+    <p>@isimler[i]<b>@soyadlar[i]</b></p>
+}
+<br /><br /><br />
+<h6>Foreach Döngüsü</h6>
+@foreach(var isim in isimler)
+{
+    <h5>@isim</h5>
+}
+<br /><br /><br />
+<h2>Razor view Engine ile Ternary İf Kulanımı</h2>
+@(11>10 ? "true ise yazacak ifade": "Falese ise yazacak ifade")
+</<br />
+@(yas>sayi ? "Yaş sayıdan büyüktür" : "Yaş sayıdan küçükütür")
+

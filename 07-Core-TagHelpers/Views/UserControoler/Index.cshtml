@@ -1,0 +1,36 @@
+﻿@{
+    //_ViewStart.cshtml den geliyor
+    //ViewStart her sayfa için ilk olarak çalıştırılır.
+    ViewData["Title"] = "TagHelpers";
+}
+@model User
+<div class="row-justify-content-center" stle="margin-top:50px">
+    <div class="col-lg-4">
+        <div class="card"
+            <div class="card-header"
+            <h3>Tag Helper Sayfası</h3>
+    </div>
+    <div class="card-body">
+        <form asp-action="TagHelpers" asp-controller="User" method="post">
+            <div class="form-group">
+                <label asp-for="UserName">Kullanıcı Adı</label>
+                <input type="text" class="form-control" asp-for="UserName"/>
+               
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Password ">Parola:</label>
+                    <input type="password" class="form-control" asp-for="Password"/>
+             @*    <input type="password" class="form-control" name="Passwod"/>*@
+
+            </div>
+            <button type="submit" class="btn btn-pimary  btn-block">Giriş Yap
+
+            </button>
+        </form>
+
+    </div>
+    </div class>="card-footer">
+    <h5>&copy;Bilge Adam Boost</h5>
+
+</div>
